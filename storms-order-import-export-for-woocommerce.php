@@ -74,7 +74,7 @@ function wt_order_basic_register_activation_hook_callback() {
 			add_action( 'init', array( $this, 'catch_export_request' ), 20 );
 			add_action( 'admin_init', array( $this, 'register_importers' ) );
                                                
-                        include_once( 'includes/class-wf-orderimpexpcsv-system-status-tools.php' );
+			include_once( 'includes/class-wf-orderimpexpcsv-system-status-tools.php' );
 			include_once( 'includes/class-wf-orderimpexpcsv-admin-screen.php' );
 			include_once( 'includes/importer/class-wf-orderimpexpcsv-importer.php' );
 
@@ -87,9 +87,9 @@ function wt_order_basic_register_activation_hook_callback() {
 			$plugin_links = array(
 				'<a href="' . admin_url( 'admin.php?page=wf_woocommerce_order_im_ex' ) . '">' . __( 'Import Export', 'order-import-export-for-woocommerce' ) . '</a>',
 			);
-                        if (array_key_exists('deactivate', $links)) {
-                            $links['deactivate'] = str_replace('<a', '<a class="wforderimpexp-deactivate-link"', $links['deactivate']);
-                        }
+			if (array_key_exists('deactivate', $links)) {
+				$links['deactivate'] = str_replace('<a', '<a class="wforderimpexp-deactivate-link"', $links['deactivate']);
+			}
 			return array_merge( $plugin_links, $links );
 		}
 		
